@@ -1,0 +1,71 @@
+body {
+	margin: 0;
+}
+
+#container {
+	max-width: 70%;
+	margin: 0 auto;
+	min-height: 100vh;
+	display: grid;
+	gap: 5px;
+	grid-template-areas: "cabecalho cabecalho"
+						 "menu conteudo"
+						 "rodape rodape";
+	grid-template-columns: 30% 70%;
+}
+
+@media (max-width: 480px) {
+	#container {
+		max-width: 100%;
+		grid-template-areas: "cabecalho"
+				"menu"
+				"conteudo"
+				"rodape";
+		grid-template-columns: 1fr;
+	}
+}
+
+header {
+	grid-area: cabecalho;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#menu-cabecalho {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 5px;
+	justify-content: space-around;
+}
+
+@media (max-width: 480px) {
+	#menu-cabecalho {
+		flex-direction: column;
+	}
+}
+
+#menu-cabecalho > li {
+	background-color: black;
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+	flex: 1;
+}
+
+nav {
+	grid-area: menu;
+}
+
+main {
+	grid-area: conteudo;
+}
+
+footer {
+	grid-area: rodape;
+}
+
+#container > * {
+	border: 1px solid black;
+}
